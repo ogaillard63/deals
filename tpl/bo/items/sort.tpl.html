@@ -1,0 +1,66 @@
+<script type="text/javascript">
+$(function () {
+  $(".dropTarget").droppable({
+			//connectToDraggable: "div",
+			hoverClass: "highlight",
+			accept: '#itemlist div',
+			drop: function( event, ui ) {
+				var cat = this.id.replace(/cat_/i, "");
+				var item = ui.draggable.context.id.replace(/item_/i, "");
+				//debugger;
+        $.ajax({
+						data: "cat=" + cat + "&item=" + item,
+            type: 'POST',
+						url: 'ajax.php',
+						success: function(res) {
+							ui.draggable.remove();
+            }
+				});
+			},
+		});
+	
+  $("#itemlist div").draggable({
+			handle: "img",
+			helper: "original",
+			revert: 'invalid',
+			cursor: "move",
+		  stack: ".dropTarget"
+	});
+});
+</script>
+<div class="row">
+	<div class="col-md-8">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{#list_of_items#|ucfirst}</h3>
+			</div>
+			<div class="panel-body" id="itemlist">
+				{if not empty($items)}
+					{foreach from=$items item=item}
+					<div class="col-lg-2 col-sm-2 mini-portfolio-item" id="item_{$item->id}">
+						
+						<img class="mini-card" src="{$item->photo_link}" title="{$item->title}" />
+					  </div>
+					{/foreach}
+			{else}<h4>{#no_item#}</h4>{/if}
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{#list_of_categories#|ucfirst}</h3>
+			</div>
+			<div class="panel-body">
+					{if not empty($categories)}
+								{foreach from=$categories item=category}
+								<h4 id="cat_{$category->id}" class="sort-category dropTarget">{$category->name}</h4>
+									{foreach from=$category->sub_categories item=sub}
+									<h5 id="cat_{$sub->id}" class="sort-subcategory dropTarget">{$sub->name}</h5>
+									{/foreach}
+								{/foreach}
+						{else}<h4>{#empty_list#}</h4>{/if}
+			</div>
+		</div>
+	</div>
+</div>

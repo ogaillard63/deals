@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{if $user->id >0}{#edit_a_user#|ucfirst}{else}{#add_a_user#|ucfirst}{/if}</h3>
+			</div>
+			<div class="panel-body">
+				<form role="form" name="form_param" method="post" action="users.php">
+					<input name="id" type="hidden" value="{$user->id}" />
+					<input name="action" type="hidden" value="save" />
+					<input name="password" type="hidden" value="{$user->password}" />
+			 <div class="form-group">
+					<label for="{#firstname#}">{#firstname#|ucfirst}</label>
+					<input class="form-control" type="text" name="firstname" value="{$user->firstname}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#lastname#}">{#lastname#|ucfirst}</label>
+					<input class="form-control" type="text" name="lastname" value="{$user->lastname}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#login#}">{#login#|ucfirst}</label>
+					<input class="form-control" type="text" name="login" value="{$user->login}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#email#}">{#email#|ucfirst}</label>
+					<input class="form-control" type="text" name="email" value="{$user->email}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#password#}">{#password#|ucfirst}</label>
+					<input class="form-control" type="text" name="password1" />
+				</div>
+			 <div class="form-group">
+					<label for="{#password#}">{#password_check#|ucfirst}</label>
+					<input class="form-control" type="text" name="password2" />
+				</div>
+			 <div class="form-group">
+					<label for="{#profil_id#}">{#profil_id#|ucfirst}</label>
+					<input class="form-control" type="text" name="profil_id" value="{$user->profil_id}" />
+				</div>
+				<div class="form-group">
+					<label>{#expiration#|ucfirst}</label>
+					<input class="form-control datepicker" type="text" name="expiration" value="{$user->expiration|date_format:"%d/%m/%Y"}" />
+				</div>
+					<div align="right">
+						<button type="submit" class="btn btn-primary">{#save#|ucfirst}</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+{config_load file="{$smarty.session.filePathLang}"}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Just the best Deals from Gearbest</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- font-awesome -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" >
+    <!-- Custom styles for this template -->
+    <link href="{$path_app}/{$tpl}/front/assets/css/custom.css" rel="stylesheet">
+    <!-- Embed google font -->
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Rationale|Saira+Condensed|Ubuntu+Condensed|Voltaire" rel="stylesheet">
+  </head>
+  <body class="dark_body">
+    <!-- Header -->
+    {include file="front/header.tpl.html"}
+    <!-- Page Content -->
+    <div class="container">
+        {include file="$content"}
+    </div>
+    <!-- /.container -->
+    <!-- Footer -->
+    {include file="front/footer.tpl.html"}
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="{$path_app}/{$tpl}/front/assets/js/notify.min.js"></script>
+    {if isset($alert)}<script>
+	$( document ).ready(function() {
+  	/* alert message */
+        $.notify('{$alert.message|ucfirst}', { className:'{$alert.type}', showAnimation: 'fadeIn'});
+      });
+	</script>{/if}
+</body>
+</html>

@@ -1,0 +1,64 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{if $item->id >0}{#edit_a_item#|ucfirst}{else}{#add_a_item#|ucfirst}{/if}</h3>
+			</div>
+			<div class="panel-body">
+				<form role="form" name="form_param" method="post" action="items.php">
+					<input name="id" type="hidden" value="{$item->id}" />
+					<input name="action" type="hidden" value="save" />
+			 <div class="form-group">
+					<label for="{#created#}">{#created#|ucfirst}</label>
+					<input class="form-control" type="text" name="created" value="{$item->created}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#title#}">{#title#|ucfirst}</label>
+					<input class="form-control" type="text" name="title" value="{$item->title}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#link#}">{#link#|ucfirst}</label>
+					<input class="form-control" type="text" name="link" value="{$item->link}" />
+				</div>
+					<div class="form-group">
+						<label>{#content#|ucfirst}</label>
+						<textarea class="form-control" name="content" rows="5">{$item->content}</textarea>
+					</div>
+			 <div class="form-group">
+					<label for="{#photo#}">{#photo#|ucfirst}</label>
+					<input class="form-control" type="text" name="photo" value="{$item->photo}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#code#}">{#code#|ucfirst}</label>
+					<input class="form-control" type="text" name="code" value="{$item->code}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#normal_price#}">{#normal_price#|ucfirst}</label>
+					<input class="form-control" type="text" name="normal_price" value="{$item->normal_price}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#promo_price#}">{#promo_price#|ucfirst}</label>
+					<input class="form-control" type="text" name="promo_price" value="{$item->promo_price}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#quantity#}">{#quantity#|ucfirst}</label>
+					<input class="form-control" type="text" name="quantity" value="{$item->quantity}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#lkid#}">{#lkid#|ucfirst}</label>
+					<input class="form-control" type="text" name="lkid" value="{$item->lkid}" />
+				</div>
+			 <div class="form-group">
+					<label for="{#shop#}">{#shop#|ucfirst}</label>
+					<input class="form-control" type="text" name="shop" value="{$item->shop}" />
+				</div>
+
+					<div align="right">
+						<!--<button type="cancel" class="btn btn-default">{#cancel#|ucfirst}</button>-->
+						<button type="submit" class="btn btn-primary">{#save#|ucfirst}</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

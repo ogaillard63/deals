@@ -1,0 +1,31 @@
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<!-- Page Heading -->
+<h6 class="my-4 breadcrumb">Contact us</h6>
+<div class="row other-page">
+   <div class="col-8 ">
+      <p>Got a question ? We'd love to hear from you.<br/>Send us a message and we'll respond as soon as possible.</p>
+      <div class="form-area mx-5 my-5">
+         <form role="form">
+            <h3 style="margin-bottom: 25px; text-align: center;">Leave your message</h3>
+            <div class="form-group">
+               <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+               <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+               <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+               <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>
+            </div>
+            <button type="button" id="submit" name="submit" class="btn btn-success pull-right">Send your message</button>
+			<div class="g-recaptcha" data-sitekey="6LeXHTwUAAAAAK9VOBWiSPhhhm7H4RSTiQ9czX1H"></div>
+		</form>
+		 <br style="clear:both">
+		</div>
+   </div>
+   <div class="col-4 my-5">
+      <img src="{$path_app}/{$tpl}/front/assets/img/contact_us.png" />
+   </div>
+</div>

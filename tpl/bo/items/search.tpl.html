@@ -1,0 +1,78 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{#search#|ucfirst}</h3>
+			</div>
+			<div class="panel-body">
+				<form role="form" name="form_param" method="post" action="items.php" class="search_form">
+					<div class="input-group">
+						<input class="form-control" type="hidden" name="action" value="search_results" />
+						<input class="form-control" type="text" name="query" value="{if not empty($query)}{$query}{/if}" />
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-primary">{#search#|ucfirst}</button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+		{if not empty($items)}
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{#search_results#|ucfirst}</h3>
+				<div class="actions pull-right">
+					<i class="fa fa-chevron-down"></i>
+					<i class="fa fa-times"></i>
+				</div>
+			</div>
+			<div class="panel-body">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>{#created#|ucfirst}</th>
+							<th>{#expired#|ucfirst}</th>
+							<th>{#title#|ucfirst}</th>
+							<th>{#link#|ucfirst}</th>
+							<th>{#affiliate_link#|ucfirst}</th>
+							<th>{#content#|ucfirst}</th>
+							<th>{#photo_link#|ucfirst}</th>
+							<th>{#code#|ucfirst}</th>
+							<th>{#normal_price#|ucfirst}</th>
+							<th>{#promo_price#|ucfirst}</th>
+							<th>{#discount#|ucfirst}</th>
+							<th>{#quantity#|ucfirst}</th>
+							<th>{#shop#|ucfirst}</th>
+							<th>{#status#|ucfirst}</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						{foreach from=$items item=item}
+						<tr>
+							<td align="left">{$item->created|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->expired|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->title|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->link|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->affiliate_link|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->content|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->photo_link|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->code|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->normal_price|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->promo_price|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->discount|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->quantity|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->shop|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+							<td align="left">{$item->status|replace:"{$query}":"<strong>{$query}</strong>"}</td>
+						</tr>
+						{/foreach}
+					</tbody>
+				</table>
+				<ul class="pagination pull-left">
+					{if not empty($btn_nav)} {foreach from=$btn_nav item=btn}
+					<li{if $btn.active} class="active" {/if}><a href="items.php?{$btn.link}">{$btn.label}</a></li>
+						{/foreach}{/if}
+				</ul>
+			</div>
+		</div>{/if}
+	</div>
+</div>

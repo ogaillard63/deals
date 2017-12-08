@@ -1,0 +1,12 @@
+{
+    "name": "banggood",
+    "description": "...",
+    "require": {
+        "smarty/smarty": "^3.1"
+    },
+    "autoload": {
+     "psr-4": {
+        "App\\":"inc/classes/"
+     }
+    }
+}

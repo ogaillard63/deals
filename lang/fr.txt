@@ -1,0 +1,101 @@
+﻿#general
+edit = modifier
+delete = effacer
+cancel = annuler
+save = enregistrer
+import = importer
+actions = actions
+search = rechercher
+search_results = résultats de la recherche
+query_too_short = search query too short !
+
+# authentification
+logout = quitter
+
+#users
+user = utilisateur
+users = utilisateurs
+lastname = nom
+firstname = prénom
+login = identifiant
+email = email
+password = mot de passe
+password_check = mot de passe (vérification)
+profil_id = profil_id
+profil = profil
+expiration = expiration
+last_cnx = last_cnx
+last_update = last_update
+list_of_users = liste des utilisateurs
+add_a_user = ajouter un utilisateur
+delete_a_user = effacer un utilisateur
+no_user = aucun utilisateur
+edit_a_user = modifier un utilisateur
+the_user_has_been_saved = l'utilisateur a été enregistré.
+the_user_has_been_deleted = l'utilisateur a été effacé.
+do_you_really_want_to_delete_this_user = voulez-vous vraiment effacer cet utilisateur
+passwords_dont_match = les mots de passe saisies sont differents ! 
+
+#items
+item = produit
+items = produits
+created = creation
+expired = expired
+title = titre
+link = lien
+affiliate_link = lien d'affiliation
+content = description
+photo_link = lien de la photo
+code = code
+normal_price = prix normal
+promo_price = prix promo
+discount = reduction
+quantity = quantité
+shop = shop
+status = status
+list_of_items = liste des produits
+add_a_item = ajouter un produit
+delete_a_item = effacer un produit
+no_item = aucun produit
+edit_a_item = modifier un produit
+the_item_has_been_saved = le produit a été enregistré.
+the_item_has_been_deleted = le produit a été effacé.
+do_you_really_want_to_delete_this_item = voulez-vous vraiment effacer ce produit ?
+
+#categories
+category = categorie
+categories = categories
+name = nom
+path = Path
+sort = Ordre
+description = description
+parent_category = catégorie principale
+sub_category = sous-catégorie
+parent = parent
+list_of_categories = liste des categories
+add_a_category = ajouter une categorie
+delete_a_category = effacer une categorie
+no_category = aucune categorie
+edit_a_category = modifier une categorie
+the_category_has_been_saved = la categorie a été enregistrée.
+the_category_has_been_deleted = la categorie a été effacée.
+do_you_really_want_to_delete_this_category = voulez-vous vraiment effacer cette categorie ?
+
+#relations
+item_id = item_id
+category_id = category_id
+relation = relation
+relations = relations
+name = name
+path = path
+description = description
+sort = sort
+parent = parent
+list_of_relations = liste des relations
+add_a_relation = ajouter une relation
+delete_a_relation = effacer une relation
+no_relation = aucune relation
+edit_a_relation = modifier une relation
+the_relation_has_been_saved = le relation a été enregistrée.
+the_relation_has_been_deleted = le relation a été effacée.
+do_you_really_want_to_delete_this_relation = voulez-vous vraiment effacer cette relation ?

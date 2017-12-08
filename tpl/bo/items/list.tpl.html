@@ -1,0 +1,61 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{#list_of_items#|ucfirst}</h3>
+			</div>
+			<div class="panel-body">
+				{if not empty($items)}<table class="table table-bordered table-striped">
+				<thead>
+					<tr>
+						<th>{#created#|ucfirst}</th>
+						<!--<th>{#expired#|ucfirst}</th>-->
+						<th>{#title#|ucfirst}</th>
+						<th>{#item#|ucfirst}</th>
+						<th>{#code#|ucfirst}</th>
+						<!--<th>{#normal_price#|ucfirst}</th>-->
+						<th>{#promo_price#|ucfirst}</th>
+						<th>{#discount#|ucfirst}</th>
+						<!--<th>{#quantity#|ucfirst}</th>-->
+						<!--<th>{#shop#|ucfirst}</th>-->
+						<th>{#status#|ucfirst}</th>
+						<th colspan="2">{#actions#|ucfirst}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{foreach from=$items item=item}
+					<tr>
+						<td align="left">{$item->created}</td>
+						<!--<td align="left">{$item->expired}</td>-->
+						<td align="left">{$item->title}</td>
+						<td align="left"><a href="{$item->affiliate_link}" target="_blank">{if $item->photo_link}<img src="{$item->photo_link}" width="100">{else}no photo{/if}</a></td>
+						<td align="left">{$item->code}</td>
+						<!--<td align="left">{$item->normal_price}</td>-->
+						<td align="left">{$item->promo_price}</td>
+						<td align="left">{$item->discount}</td>
+						<!--<td align="left">{$item->quantity}</td>-->
+						<!--<td align="left">{$item->shop}</td>-->
+						<td align="left">{$item->status}</td>
+						<td width="1%" align="center" nowrap="nowrap"><a class="btn btn-sm btn-success" href="items.php?action=edit&id={$item->id}" title="{#edit#|ucfirst}">{#edit#|ucfirst}</a></td>
+						<td width="1%" align="center" nowrap="nowrap"><a class="btn btn-sm btn-danger" href="items.php?action=delete&id={$item->id}" title="{#delete#|ucfirst}" onclick="return confirm('{#do_you_really_want_to_delete_this_item#|ucfirst} ?')">{#delete#|ucfirst}</a></td>
+					</tr>
+					{/foreach}
+				</tbody>
+			</table>
+			{else}<h4>{#no_item#}</h4>{/if}
+			<div class="panel-footer">
+				<ul class="pagination">
+					{if not empty($btn_nav)} {foreach from=$btn_nav item=btn}
+					<li{if $btn.active} class="active" {/if}><a href="items.php?{$btn.link}">{$btn.label}</a></li>
+						{/foreach}{/if}
+				</ul>
+				<div class="btn-group pull-right">
+					<a href="items.php?action=search" class="btn btn-success">{#search#|ucfirst}</a>
+					<a href="items.php?action=add" class="btn btn-primary">{#add_a_item#|ucfirst}</a>
+					<a href="import.php" class="btn btn-primary">{#import#|ucfirst}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

@@ -1,0 +1,60 @@
+      <!-- Page Heading -->
+      <h6 class="my-4 breadcrumb">{if isset($breadcrumb) && !isset($query)}
+        <a href="{$path_app}/{$breadcrumb[0]->path}">{$breadcrumb[0]->name}</a>{if isset($breadcrumb[1])}&nbsp;>&nbsp;{$breadcrumb[1]->name}{/if}
+      {else}{if isset($query)}Search results{else}<a href="{$path_app}/">Home</a>{/if}{/if}</h6>
+      <div class="row">
+        {foreach from=$items item=item}
+        <div class="col-xl-2 col-lg-3 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            {if $item->discount > 0}<span class="icon icon-sale">{$item->discount}</span>{/if}
+            {if $item->discount == 0}<span class="re-ribbon-badge left-badge red-badge"><span>MEGA SALE</span></span>{/if}
+            <span class="shop bg-{$item->shop}">{$item->shop|upper}</span>
+              <a href="{$item->affiliate_link}" target="_blank"><img class="card-img-top" src="{$item->photo_link}" alt=""></a>
+              <div class="above-entry-meta">
+                <span class="cat-links">
+                  <!-- <a href="#" class="bg-{$item->shop} mr-1">{$item->shop|upper}</a> -->
+                  <!-- <a href="" rel="category tag" class="bg-success mr-1">GEARBEST</a>&nbsp; -->
+                  <!-- <a href="" rel="category tag" class="bg-success mr-1">HOBBIES</a>&nbsp;</span> -->
+                </div>
+              <div class="card-body">
+              <h4 class="card-title">
+                <a href="{$item->affiliate_link}" target="_blank">{$item->title}</a>
+              </h4>
+                <!-- Price & Code  -->
+                <div class="priced_block clearfix ">
+                  <span class="rh_price_wrapper">
+                      {if $item->code}
+                    <span class="coupon"  title="Click to copy the code !" data-clipboard-text="{$item->code}">
+                      <ins>{$item->code}</ins>
+                    </span>
+                    {else}<span class="sale"><ins>Flash Sale</ins></span>{/if}
+                  </span>
+                  <a href="{$item->affiliate_link}" class="promo_price" target="_blank">
+                  {if $currency == "EUR"}${$item->promo_price|number_format:2}{else}{($item->promo_price/$rate)|number_format:2}€{/if}</a>
+                </div>
+                <!-- End content -->
+              <!--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>-->
+            </div>
+          </div>
+        </div>
+        {/foreach}
+      </div>
+      <!-- /.row -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+      <script>
+        var clipboard = new Clipboard('.coupon');
+        //clipboard.destroy();
+        clipboard.on('success', function(event, ui) {
+          //showTooltip(e.trigger,'Copied!')
+          $(event.trigger).animate({
+            bottom: '7px', opacity: '0.2'}, 200).animate({
+             bottom: '2px', opacity: '1'}, 200);
+        });
+        </script>
+      <!-- Pagination -->
+      <ul class="pagination justify-content-center">
+					{if not empty($btn_nav)} {foreach from=$btn_nav item=btn}
+					<li{if $btn.active} class="page-item active" {/if}><a class="page-link" href="index.php?{$btn.link}">{$btn.label}</a></li>
+						{/foreach}{/if}
+				</ul>
+      

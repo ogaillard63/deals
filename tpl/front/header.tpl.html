@@ -1,0 +1,40 @@
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="{$path_app}/"><img src="{$path_app}/{$tpl}/front/assets/img/jtbdeals_logo.png" alt="Just the best Deals">
+    </a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="{$path_app}/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto ml-4">
+    {foreach from=$categories item=category}
+    {if $category->parent == 0}<li class="nav-item dropdown">
+    <a class="nav-link dropdown btn btn-success mr-2" href="" id="navbarDropdown_{$category->id}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{$category->name}</a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown_{$category->id}">
+        {foreach from=$categories item=sub_category}{if $category->id == $sub_category->parent}
+        <a class="dropdown-item" href="{$path_app}/{$category->path}/{$sub_category->path}">{$sub_category->name}</a>
+        {/if}
+        {/foreach}
+      </div>
+    </li>
+    {/if}
+    {/foreach}
+    </ul>
+ 
+      <form role="form" name="form_param" method="post" action="index.php" class="form-inline my-2 my-lg-0">
+      <input type="hidden" name="action" value="search" />
+      <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="query">
+      <button type="submit" class="btn btn-success"><i class="icon-search" title="Search"></i></button>
+    </form>
+    
+    <div class="form-inline mx-2">
+    <a href="{$path_app}/currency" title="Change the currency"><button class="btn {if $currency=="USD"}btn-warning{else}btn-primary{/if}" type="button">{$currency}</button></a>
+   </div>
+  </div>
+</nav>
+
+
+  

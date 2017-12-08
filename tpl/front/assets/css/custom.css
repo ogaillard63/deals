@@ -1,0 +1,408 @@
+/* custom jtbdeals.com */
+
+
+.green-0 { color: #28A744 }	
+.green-1 { color: #6FCF84 }
+.green-2 { color: #45B85E }
+.green-3 { color: #026F1A }
+.green-4 { color: #026F1A }
+
+.blue-0 { color: #237888 }	
+.blue-1 { color: #62A7B4 }
+.blue-2 { color: #3A8796 }
+.blue-3 { color: #116272 }
+.blue-4 { color: #044D5A }
+
+.orange-0 { color: #DD8735 }	
+.orange-1 { color: #FFC288 }
+.orange-2 { color: #F3A55B }
+.orange-3 { color: #B86617 }
+.orange-4 { color: #924903 }
+
+.red-0 { color: #DD4535 }	
+.red-1 { color: #FF9488 }
+.red-2 { color: #F36A5B }
+.red-3 { color: #B82717 }
+.red-4 { color: #921103 }
+
+* {
+  border-radius: 0 !important;
+}
+
+
+body {
+font-family: 'Patrick Hand', cursive;
+/*
+font-family: 'Ubuntu Condensed', sans-serif;
+font-family: 'Voltaire', sans-serif;
+font-family: 'Saira Condensed', sans-serif;
+font-family: 'Rationale', sans-serif;
+*/
+}
+body.dark_body {
+  background: #2c2c2d;
+}
+
+@media (min-width: 1152px) {
+.container {
+      max-width: 1920px;
+  }
+}
+
+.bg-dark {
+  background-color: #202124!important;
+}
+a {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: #28a745;
+  color: #ffffff;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.pagination {
+  margin-bottom: 30px;
+}
+
+/* others pages */
+.other-page {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 28px;
+  margin-left: 20px;
+}
+.other-page h5 {
+  color: #28a745;
+}
+
+/* language-selector */
+.language-selector {
+  display: block;
+  width: 24px;
+  line-height: 18px;
+  margin: 0;
+}
+.language-selector a {
+  border: 1px solid #2c2c2d;
+}
+.language-selector a:hover {
+  border: 1px solid #28a745;
+}
+/* card */
+.card-body {
+  padding: .25rem;
+}
+/* Categories */
+.above-entry-meta {
+margin-left: 6px;
+}
+.cat-links a {
+  background-color: #289dcc;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 2px 6px;
+  text-decoration: none;
+  
+}
+.cat-links a:hover {
+  background-color: #343a40;
+}
+
+/* Title */
+.card-title {
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 14px;
+}
+h4.card-title a {
+  color: #515775;
+}
+h4.card-title a:hover {
+  text-decoration: none;
+  color: #0056b3;
+  }
+
+/* -----bloc prix --- */
+
+.priced_block {
+  margin-bottom: 40px;
+  float: left;
+  display: block;
+}
+
+.priced_block .coupon, .priced_block .sale  {
+  background: rgb(188, 250, 89);
+  color: #343a40;
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  font-weight: bold;
+  padding: 7px 7px;
+  line-height: 14px;
+  display: block;
+  text-align: center;
+}
+.priced_block .coupon:hover {
+  background: rgb(107, 245, 15);
+}
+.priced_block .coupon ins, .priced_block .sale ins {
+  text-decoration: none;
+}
+.priced_block .sale  {
+  background: #F9CC50;
+}
+
+.priced_block a {
+    color: #000000;
+    background: #f5f4ef;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 7px 7px;
+    line-height: 24px;
+}
+.priced_block a:hover {
+  color: red;
+  text-decoration: none;
+}
+
+.shop {
+  padding: 2px 5px;
+  position: absolute;
+  text-align: center;
+  font-size: 11px;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+  margin: 0;
+  background: #DD8735;
+  color: #fff;
+}
+/* shop color */
+.shop.bg-gearbest {
+  background-color: rgb(23, 145, 182);
+}
+.shop.bg-banggood {
+  background-color: #026F1A;
+}
+.shop.bg-aliexpress {
+  background-color: rgb(156, 130, 1);
+}
+
+.re-ribbon-badge.left-badge {
+  right: auto;
+  left: -8px;
+  text-align: left;
+}
+.re-ribbon-badge {
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  text-align: right;
+  z-index: 600;
+  pointer-events: none;
+}
+.re-ribbon-badge {
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  text-align: right;
+  z-index: 600;
+  pointer-events: none
+}
+.re-ribbon-badge span {
+  font: bold 10px/28px Arial;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  transform: rotate(45deg);
+  width: 125px;
+  display: block;
+  background: #77B21D;
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 21px;
+  right: -27px
+}
+.re-ribbon-badge span::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #333;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #333
+}
+.re-ribbon-badge span::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #333;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #333
+}
+.re-ribbon-badge.red-badge span {
+  background: #c00
+}
+.re-ribbon-badge.left-badge {
+  right: auto;
+  left: -8px;
+  text-align: left
+}
+.re-ribbon-badge.left-badge span {
+  transform: rotate(-45deg);
+  right: 0
+}
+
+/* discount label */
+.icon-sale {
+    z-index: 100;
+    font-family: 'Patrick Hand', cursive;
+    position: absolute;
+    top: -6px;
+    left: 0;
+    background-position: 0px -2px;
+    width: 70px;
+    height: 46px;
+    text-indent: 10px;
+    text-align: center;
+    padding-right: 23px;
+    line-height: 40px;
+    color: #fff;
+    font-size:32px;
+    font-weight: 700;
+}
+.icon {
+    background-image: url(../img/discount_label.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+/* navigation */
+.nav-link {
+  display: block;
+  padding: .3rem 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255,255,255,1);
+}
+
+.breadcrumb {
+  padding: .5rem 1rem;
+  background-color: #525252;
+  color: #ffffff;
+}
+
+/* cards */
+.card {
+  border: none;
+}
+
+/* notification */
+.notifyjs-bootstrap-base {
+  padding: 5px 15px 8px 14px;
+}
+
+/* footer */
+footer h5 {
+  color: #ffffff; 
+}
+
+/* TEST ------------------------ */
+.navbar-dark .navbar-nav .nav-link {
+  margin-right: 2px; 
+ }
+ .dropdown-menu {
+   background-color: #46464D;
+ }
+.dropdown-item {
+     color: #ffffff;
+}
+
+/* Reviews */
+.rating {
+    display: block;
+    height: 20px;
+    width: 105px;
+    margin:0 0 5px;
+}
+
+.rating div {
+    display: block;
+    height: 20px;
+    width: 105px;
+  background-repeat:no-repeat;
+  background-image:url("../img/stars_yellow.png"); /* colors are yellow, orange, red, blue, and black. */
+}
+
+.rating .stars_1 {
+  background-position: 0 0;
+}
+
+.rating .stars_15 {
+  background-position: 0 -20px;
+}
+
+.rating .stars_2 {
+  background-position: 0 -40px;
+}
+
+.rating .stars_25 {
+  background-position: 0 -60px;
+}
+
+.rating .stars_3 {
+  background-position: 0 -80px;
+}
+
+.rating .stars_35 {
+  background-position: 0 -100px;
+}
+
+.rating .stars_4 {
+  background-position: 0 -120px;
+}
+
+.rating .stars_45 {
+  background-position: 0 -140px;
+}
+
+.rating .stars_5 {
+  background-position: 0 -160px;
+}
+
+
+/* ---- haute resolution ---- */
+@media (min-width: 1400px) {
+.priced_block a {
+  font-size: 24px;
+  line-height: 24px;
+}
+.card-title {
+    line-height: 1rem;
+    font-size: 1rem;
+}
+}
+

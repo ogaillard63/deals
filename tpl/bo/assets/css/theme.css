@@ -1,0 +1,50 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+/* navbar */
+.navbar-default {
+    background-color: #3497da;
+    border-color: #E7E7E7;
+}
+/* buttons, select, dropdown */
+.btn-group a.btn {
+    margin-right: 5px;
+}
+/* pagination */
+.pagination {
+    margin: 0;
+}
+/* panel */
+
+.panel-footer {
+     background-color: #FFF; 
+}
+/* sort portfolio */
+.mini-portfolio-item {
+    margin-bottom: 3px;
+  }
+
+  .mini-card {
+    border: 1px solid gray;
+  }
+  img.mini-card {
+    width:100%;
+    height: auto;
+  }
+
+  .sort-category {
+    font-weight: bold;
+    margin: 0 0 3px 0;
+    padding: 3px 0 3px 10px;
+    background-color: #CCC;
+  }
+  .sort-subcategory {
+    margin: 0 0 3px 15px;
+    padding: 3px 0 3px 10px;
+    background-color: #EDEDED;
+  }
+
+  .highlight {
+    background-color: red;
+}

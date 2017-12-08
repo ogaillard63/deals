@@ -1,0 +1,51 @@
+﻿{config_load file="{$smarty.session.filePathLang}"}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Web App Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{$path_app}/res/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="{$path_app}/res/bootstrap/css/bootstrap-theme.css" rel="stylesheet">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{$path_app}/res/bootstrap/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{$tpl}/bo/assets/css/theme.css" rel="stylesheet">
+    <link href="{$path_app}/res/jquery/css/jquery-ui.min.css" rel="stylesheet">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+	<body>
+	{include file="bo/header.tpl.html"}
+	<div class="container theme-showcase" role="main">
+	{include file="$content"}
+	</div>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{$path_app}/res/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+   <!-- Notification -->
+    <script src="{$path_app}/res/plugins/notify/notify.min.js"></script>
+    <!-- jQuery first then Bootstrap JS -->
+    <script src="{$path_app}/res/jquery/js/jquery.js"></script>
+    <script src="{$path_app}/res/jquery/js/jquery-ui.min.js"></script>
+    <script src="{$path_app}/res/bootstrap/js/bootstrap.min.js"></script>
+    {if isset($alert)}<script>
+	$( document ).ready(function() {
+  	/* alert message */
+		$.notify("{$alert.message|ucfirst}", "{$alert.type}");
+		});
+	</script>{/if}
+  </body>
+</html>

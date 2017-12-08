@@ -1,0 +1,46 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">{#list#|ucfirst} {#of_#} {#categories#}</h3>
+			</div>
+			<div class="panel-body">
+				{if not empty($categories)}<table class="table table-bordered table-striped table-hover">
+				<thead>
+					<tr>
+						<th width="1%" colspan="2">{#name#|ucfirst}</th>
+						<th width="1%">{#path#|ucfirst}</th>
+						<th width="1%">{#sort#|ucfirst}</th>
+						<th colspan="2">{#actions#|ucfirst}</th>
+					</tr>
+				</thead>
+				<tbody>
+					{foreach from=$categories item=category}
+					<tr>
+						<td align="left" colspan="2"><strong>{$category->name}</strong></td>
+						<td align="left">{$category->path}</td>
+						<td align="left">{$category->sort}</td>
+						<td width="1%" align="center" nowrap="nowrap"><a class="btn btn-xs btn-success" href="categories.php?action=edit&id={$category->id}" title="{#edit#|ucfirst} {#this#} {#category#}">{#edit#|ucfirst}</a></td>
+						<td width="1%" align="center" nowrap="nowrap">{if not $category->sub_categories}<a class="btn btn-xs btn-danger" href="categories.php?action=delete&id={$category->id}" title="{#delete#|ucfirst} {#this#} {#category#}"onclick="return confirm('{#do_you_really_want_to#|ucfirst} {#delete#} {#this#} {#category#} ?')">{#delete#|ucfirst}</a>{/if}</td>
+					</tr>
+						{foreach from=$category->sub_categories item=sub}
+						<tr>
+							<td width="1%" align="left"></td>
+							<td align="left">{$sub->name}</td>
+							<td align="left">{$sub->path}</td>
+							<td align="left">{$sub->sort}</td>
+							<td width="1%" align="center" nowrap="nowrap"><a class="btn btn-xs btn-success" href="categories.php?action=edit&id={$sub->id}" title="{#edit#|ucfirst} {#this#} {#category#}">{#edit#|ucfirst}</a></td>
+							<td width="1%" align="center" nowrap="nowrap"><a class="btn btn-xs btn-danger" href="categories.php?action=delete&id={$sub->id}" title="{#delete#|ucfirst} {#this#} {#category#}"onclick="return confirm('{#do_you_really_want_to#|ucfirst} {#delete#} {#this#} {#category#} ?')">{#delete#|ucfirst}</a></td>
+						</tr>
+						{/foreach}
+					{/foreach}
+				</tbody>
+			</table>
+			{else}<h4>{#empty_list#}</h4>{/if}
+				<div class="panel-footer">
+					<a href="categories.php?action=add" class="btn btn-sm btn-primary pull-right">{#add_a_category#|ucfirst}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

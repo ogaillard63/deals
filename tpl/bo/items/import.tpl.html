@@ -1,0 +1,82 @@
+<script type="text/javascript" charset="utf-8">{literal}
+$(function() { 
+	// https://regex101.com/
+	
+	$('#import_field0').keyup(function(){
+	var str = jQuery.trim($(this).val());
+	// title
+		const regex_title = /title="(.*?)"/i;
+		if ((m = regex_title.exec(str)) !== null) {
+			var title = m[1].replace('/ from Gearbest/gi', '');
+			$('#title_field').val(title);	
+		}
+	// link
+		const regex_link_ = /href="(.*?)"/i;
+		if ((m = regex_link_.exec(str)) !== null) {
+			$('#link_field').val(m[1]);	
+		}
+	// photo
+		const regex_photo = /<img src="(.*?)"/i;
+		if ((m = regex_photo.exec(str)) !== null) {
+			$('#photo_field').val(m[1]);	
+		}
+	// code
+		const regex_code = /coupon\s?:?'?\s?(\w+)/i;
+		if ((m = regex_code.exec(str)) !== null) {
+			$('#code_field').val(m[1]);	
+		}
+	// price
+		const regex_price = /[$]([0-9]*[.][0-9]*)/i;
+		if ((m = regex_price.exec(str)) !== null) {
+			$('#price_field').val(m[1]);	
+		}
+	});
+});
+</script>{/literal}
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Importation</h3>
+			</div>
+			<div class="panel-body">
+			<form role="form" name="form_param" method="post" action="import.php">
+				<input name="action" type="hidden" value="import">
+				<div class="form-group">
+					<label for="importation">Importation</label>
+					<textarea id="import_field0" class="form-control" name="data" rows="6"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="{#title#}">{#title#|ucfirst}</label>
+					<input id="title_field" class="form-control" type="text" name="title" value="" />
+				</div>
+				<div class="form-group">
+					<label for="{#affiliate_link#}">{#affiliate_link#|ucfirst}</label>
+					<input id="link_field" class="form-control" type="text" name="affiliate_link" value="" />
+				</div>
+				<div class="form-group">
+					<label for="{#photo_link#}">{#photo_link#|ucfirst}</label>
+					<input id="photo_field" class="form-control" type="text" name="photo_link" value="" />
+				</div>
+				<div class="form-group">
+					<label for="{#promo_price#}">{#promo_price#|ucfirst}</label>
+					<input id="price_field" class="form-control" type="text" name="promo_price" value="" />
+				</div>
+				<div class="form-group">
+					<label for="{#code#}">{#code#|ucfirst}</label>
+					<input id="code_field" class="form-control" type="text" name="code" value="" />
+				</div>
+				<div class="form-group">
+					<label for="{#discount#}">{#discount#|ucfirst}</label>
+					<input id="code_field" class="form-control" type="text" name="discount" value="" />
+				</div>
+				<div align="right">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+					<button type="submit" class="btn btn-primary">Importer</button>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>

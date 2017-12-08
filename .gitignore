@@ -1,0 +1,9 @@
+/tpl_cache
+/inc/properties
+/vendor
+/res
+/tpl/front/assets/img
+/tpl/front/bo/img
+sitemap.xml
+.htaccess
+favicon.ico
