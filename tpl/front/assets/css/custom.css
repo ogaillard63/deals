@@ -1,42 +1,16 @@
 /* custom jtbdeals.com */
-
-
-.green-0 { color: #28A744 }	
-.green-1 { color: #6FCF84 }
-.green-2 { color: #45B85E }
-.green-3 { color: #026F1A }
-.green-4 { color: #026F1A }
-
-.blue-0 { color: #237888 }	
-.blue-1 { color: #62A7B4 }
-.blue-2 { color: #3A8796 }
-.blue-3 { color: #116272 }
-.blue-4 { color: #044D5A }
-
-.orange-0 { color: #DD8735 }	
-.orange-1 { color: #FFC288 }
-.orange-2 { color: #F3A55B }
-.orange-3 { color: #B86617 }
-.orange-4 { color: #924903 }
-
-.red-0 { color: #DD4535 }	
-.red-1 { color: #FF9488 }
-.red-2 { color: #F36A5B }
-.red-3 { color: #B82717 }
-.red-4 { color: #921103 }
-
 * {
   border-radius: 0 !important;
 }
 
-
 body {
-font-family: 'Patrick Hand', cursive;
+  font-family: 'Voltaire', sans-serif;
 /*
+  font-family: 'Rationale', sans-serif;
+
+  font-family: 'Patrick Hand', cursive;
 font-family: 'Ubuntu Condensed', sans-serif;
-font-family: 'Voltaire', sans-serif;
 font-family: 'Saira Condensed', sans-serif;
-font-family: 'Rationale', sans-serif;
 */
 }
 body.dark_body {
@@ -279,7 +253,7 @@ h4.card-title a:hover {
 /* discount label */
 .icon-sale {
     z-index: 100;
-    font-family: 'Patrick Hand', cursive;
+    font-family: 'Voltaire', sans-serif;
     position: absolute;
     top: -6px;
     left: 0;
@@ -291,7 +265,7 @@ h4.card-title a:hover {
     padding-right: 23px;
     line-height: 40px;
     color: #fff;
-    font-size:32px;
+    font-size:28px;
     font-weight: 700;
 }
 .icon {
@@ -328,6 +302,15 @@ h4.card-title a:hover {
 /* footer */
 footer h5 {
   color: #ffffff; 
+}
+.inline_tools { 
+  z-index: 200;
+  position: absolute;
+  display: inline-block;
+  top:5px;
+  right:5px;
+  background-color: #46464D;
+  padding: 4px;
 }
 
 /* TEST ------------------------ */

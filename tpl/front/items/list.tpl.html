@@ -35,6 +35,10 @@
                 <!-- End content -->
               <!--<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>-->
             </div>
+            {if isset($is_admin) && $is_admin}<div class="inline_tools">
+              <a href="{$path_app}/items.php?action=delete&id={$item->id}" class="btn btn-danger" onclick="return confirm('Voulez-vous vraiment effacer ce produit ?')"><i class="icon-trash" title="delete"></i></a>
+              <a href="{$path_app}/items.php?action=edit&id={$item->id}" class="btn btn-primary"><i class="icon-edit" title="edit"></i></a>
+          </div>{/if}
           </div>
         </div>
         {/foreach}

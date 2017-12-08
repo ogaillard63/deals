@@ -9,6 +9,8 @@
 use App\Utils;
 use App\Item;
 use App\ItemManager;
+use App\User;
+use App\UserManager;
 use App\CategoryManager;
 use App\Pagination;
 
@@ -35,15 +37,20 @@ if(!isset($_COOKIE["currency"])) {
 }
 
 $currency = $_COOKIE["currency"];
-if ($path == "currency") {
+if (isset($path) && $path == "currency") {
 	if ($currency == "USD") $currency = "EUR";
     else $currency = "USD";
     setcookie("currency", $currency, time() + (86400 * 180), "/"); 
-	unset($path);
-	}
+    // redirect ??
+    }
 $smarty->assign("currency", $currency);
 $smarty->assign("rate", $rate);
- 
+
+if ($user->isLogged()) $smarty->assign("is_admin", 1);
+else $smarty->assign("is_admin", 0);
+// sauvegarde le referrer
+$session->setValue("referrer", $path_app."/".$path);
+$smarty->assign("referrer_page", $session->getValue("referrer"));
 
 // navigation
 /*

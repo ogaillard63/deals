@@ -3,13 +3,14 @@ namespace App;
 
 class Session {
 
-	private static $instance;
-
+	private static $_instance;
+	
 	public static function getInstance() {
-		if (!isset(self::$instance)) {
-			self::$instance = new Session();
+		if(is_null(self::$_instance)) {
+			self::$_instance = new Session();
+			//echo "new Session";
 		}
-		return self::$instance;
+		return self::$_instance;
 	}
 
 	private function __construct() {
@@ -32,7 +33,9 @@ class Session {
 	}
 
 	public function setReferer() {
-		$referer = parse_url(($_SERVER['HTTP_REFERER'] == $_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : $_SERVER['HTTP_REFERER']);
+		if (isset($_SERVER['HTTP_REFERER'])) $referer = parse_url(($_SERVER['HTTP_REFERER'] == $_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : $_SERVER['HTTP_REFERER']);
+		else $referer = parse_url($_SERVER['PHP_SELF']);
+		//$referer = parse_url(($_SERVER['HTTP_REFERER'] == $_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : $_SERVER['HTTP_REFERER']);
 		$_SESSION["referer"] = $referer["path"];
 	}
 

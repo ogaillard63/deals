@@ -48,7 +48,8 @@ $smarty->compile_check = true;
 $smarty->force_compile = true;
 $smarty->assign('tpl', PATH_TPL_RELATIVE);
 $array = explode(DIRECTORY_SEPARATOR, dirname (__FILE__));
-$smarty->assign('path_app', "/".$array[count($array)-2]);
+$path_app = "/".$array[count($array)-2];
+$smarty->assign('path_app', $path_app);
 //$smarty->assign('path_app', "");
 
 

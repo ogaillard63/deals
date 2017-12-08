@@ -7,12 +7,14 @@
 */
 
 use App\Utils;
+use App\Session;
 use App\Item;
 use App\ItemManager;
 use App\Pagination;
 
 require_once( "inc/prepend.php" );
-//$user->isLoggedIn(); // Espace privé
+$user->isLoggedIn(); // Espace privé
+
 // Récupération des variables
 $action				= Utils::get_input('action','both');
 $page				= Utils::get_input('page','both');
@@ -35,7 +37,6 @@ $status				= Utils::get_input('status','post');
 $query				= Utils::get_input('query','post');
 
 $item_manager = new ItemManager($bdd);
-
 switch($action) {
 	
 	case "add" :
@@ -73,11 +74,10 @@ switch($action) {
 		if ($discount == 0 && $promo_price > 0 && $normal_price > 0) { 
 			$discount = (1-($promo_price/$normal_price))*100;
 		}
-		
-		
 		$data = array("id" => $id, "created" => $created, "expired" => $expired, "title" => $title, "link" => $link, "affiliate_link" => $affiliate_link, "content" => $content, "photo_link" => $photo_link, "code" => $code, "normal_price" => $normal_price, "promo_price" => $promo_price, "discount" => $discount, "quantity" => $quantity, "shop" => $shop, "status" => $status);
 		$item_manager->saveItem(new Item($data));
 		$log->notification($translate->__('the_item_has_been_saved'));
+		if ($session->getValue("referrer")) Utils::redirection($session->getValue("referrer"));
 		Utils::redirection("items.php");
 		break;
 
@@ -86,6 +86,7 @@ switch($action) {
 		if ($item_manager->deleteItem($item)) {
 			$log->notification($translate->__('the_item_has_been_deleted'));
 		}
+		if ($session->getValue("referrer")) Utils::redirection($session->getValue("referrer"));
 		Utils::redirection("items.php");
 		break;
 
