@@ -1,6 +1,6 @@
 <?php
 /**
-* @project		test
+* @project		jtbdeals
 * @author		Olivier Gaillard
 * @version		1.0 du 19/02/2017
 * @desc			Controleur des objets : users

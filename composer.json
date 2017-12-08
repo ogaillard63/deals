@@ -1,5 +1,5 @@
 {
-    "name": "banggood",
+    "name": "jtbdeals",
     "description": "...",
     "require": {
         "smarty/smarty": "^3.1"

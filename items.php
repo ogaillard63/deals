@@ -1,6 +1,6 @@
 <?php
 /**
-* @project		banggood
+* @project		jtbdeals
 * @author		Olivier Gaillard
 * @version		1.0 du 28/11/2017
 * @desc			Controleur des objets : items

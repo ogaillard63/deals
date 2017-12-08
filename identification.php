@@ -1,6 +1,6 @@
 <?php
 /**
- * @project		WebApp Base
+ * @project		jtbdeals
  *
  * @author		Olivier Gaillard <ogaillard63@gmail.com>
  * @version		1.0 du 13/03/2014

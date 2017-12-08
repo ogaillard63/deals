@@ -1,10 +1,10 @@
 <?php
 /**
-* @project		banggood
+* @project		jtbdeals
 * @author		Olivier Gaillard
 * @version		1.0 du 28/11/2017
 * @desc			import depuis la page
-*                https://affiliate.gearbest.com/home/link/hottest-deals
+*               https://affiliate.gearbest.com/home/link/hottest-deals
 */
 
 use App\Utils;
