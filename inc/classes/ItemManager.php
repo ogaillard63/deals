@@ -90,6 +90,19 @@ class ItemManager {
 		return $this->getItems(($page_num-1)*$count, $count);
 	 }
 	/**
+	* Recherche les items par lien
+	*/
+	public function searchItemsByLink($query) {
+		$items = array();
+		$q = $this->bdd->prepare('SELECT * FROM items WHERE link LIKE :query');
+		$q->bindValue(':query', '%'.$query.'%', PDO::PARAM_STR);
+		$q->execute();
+		while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
+			$items[] = new Item($data);
+		}
+		return $items;
+	}
+	 /**
 	* Recherche les items
 	*/
 	public function searchItems($query) {

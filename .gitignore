@@ -8,3 +8,5 @@ sitemap.xml
 .htaccess
 favicon.ico
 composer.lock
+gearbest.php
+gearbest.json
