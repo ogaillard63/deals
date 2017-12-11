@@ -2,7 +2,14 @@
     "name": "jtbdeals",
     "description": "...",
     "require": {
-        "smarty/smarty": "^3.1"
+        "smarty/smarty": "~3.1",
+        "twbs/bootstrap": "4.0.0-beta.2",
+        "components/jquery": "~3.2.1"
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "@php install.php"
+        ]
     },
     "autoload": {
      "psr-4": {

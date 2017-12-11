@@ -32,7 +32,7 @@ $smarty->assign("titre", $translate->__('list_of_items'));
 $smarty->assign("categories", $category_manager->getCategoriesToMenu());
 
 // currency
-if(!isset($_COOKIE["currency"])) {
+if (!isset($_COOKIE["currency"])) {
     setcookie("currency", "USD", time() + (86400 * 180), "/"); 
 }
 
