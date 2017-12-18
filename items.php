@@ -37,6 +37,8 @@ $status				= Utils::get_input('status','post');
 $query				= Utils::get_input('query','post');
 
 $item_manager = new ItemManager($bdd);
+$session->unsetkey("referrer");
+
 switch($action) {
 	
 	case "add" :
@@ -86,7 +88,11 @@ switch($action) {
 		if ($item_manager->deleteItem($item)) {
 			$log->notification($translate->__('the_item_has_been_deleted'));
 		}
-		if ($session->getValue("referrer")) Utils::redirection($session->getValue("referrer"));
+		if ($session->getValue("referrer")) {
+			$redirect = $session->getValue("referrer");
+			$session->unsetkey("referrer");
+			Utils::redirection($redirect);
+			}
 		Utils::redirection("items.php");
 		break;
 

@@ -4,6 +4,7 @@
       {else}{if isset($query)}Search results{else}<a href="{$path_app}/">Home</a>{/if}{/if}</h6>
       <div class="row">
         {foreach from=$items item=item}
+        {if $item->affiliate_link <> "" && $item->photo_link <> ""}
         <div class="col-xl-2 col-lg-3 col-sm-6 portfolio-item">
           <div class="card h-100">
             {if $item->discount > 0}<span class="icon icon-sale">{$item->discount}</span>{/if}
@@ -40,7 +41,7 @@
               <a href="{$path_app}/items.php?action=edit&id={$item->id}" class="btn btn-primary"><i class="icon-edit" title="edit"></i></a>
           </div>{/if}
           </div>
-        </div>
+        </div>{/if}
         {/foreach}
       </div>
       <!-- /.row -->

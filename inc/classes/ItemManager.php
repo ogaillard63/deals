@@ -57,10 +57,10 @@ class ItemManager {
 			$q = $this->bdd->prepare('SELECT i.* FROM items i
 						JOIN item_category r ON i.id = r.item_id
 						JOIN categories c ON c.id = r.category_id
-						WHERE c.path = :category ORDER BY i.discount DESC, i.created DESC');
+						WHERE c.path = :category ORDER BY i.created DESC, i.discount DESC');
 			$q->bindValue(':category', $category , PDO::PARAM_STR);
 		}
-		else $q = $this->bdd->prepare('SELECT * FROM items ORDER BY discount DESC, created DESC');
+		else $q = $this->bdd->prepare('SELECT * FROM items ORDER BY created DESC, discount DESC');
 		$q->execute();
 		while ($data = $q->fetch(PDO::FETCH_ASSOC)) {
 			$items[] = new Item($data);
