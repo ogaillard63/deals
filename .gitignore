@@ -10,4 +10,9 @@ favicon.ico
 composer.lock
 gearbest.php
 gearbest.json
+<<<<<<< HEAD
 dump.php
+=======
+install.php
+
+>>>>>>> f1ead86c3e762d47805e952e99ed286742ee2d57
